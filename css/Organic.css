@@ -1,0 +1,72 @@
+#organic-certification {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2f4f2f; /* Dark green color for organic feel */
+  background-color: #f9f9f9; /* Light subtle background */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 40px auto;
+}
+#organic-certification h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #3a7d44; /* underline with dark green */
+  padding-bottom: 8px;
+}
+#organic-certification h3 {
+  font-size: 1.5rem;
+  color: #3a7d44;
+  margin-bottom: 12px;
+}
+#organic-certification p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+#organic-certification ul,
+#organic-certification ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #2f4f2f;
+}
+#organic-certification ul li,
+#organic-certification ol li {
+  margin-bottom: 10px;
+}
+#organic-certification ul li strong {
+  color: #336633;
+}
+
+/* Image styling */
+#organic-certification img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+   margin-top: 20px;
+  border: 2px solid #3a7d44;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+@media (max-width: 600px) {
+  #organic-certification {
+    padding: 20px 15px;
+  }
+  
+  #organic-certification h2 {
+    font-size: 1.8rem;
+  }
+  
+  #organic-certification h3 {
+    font-size: 1.3rem;
+  }
+  
+  #organic-certification p,
+  #organic-certification ul li,
+  #organic-certification ol li {
+    font-size: 1rem;
+  }
+}
+

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+  <style>
+     .hidden {
+      display: none;
+    }
+
+    #paymentSection {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .order-summary {
+      background: #fff;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    .payment-options button {
+      width: 200px;
+      background: #28a745;
+      margin: 8px;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .online-options button {
+      display: block;
+      width: 250px;
+      margin: 10px auto;
+      background: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .checkout-screen,
+    .pin-screen,
+    .success-screen {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 350px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .success {
+      color: green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+.payment-options {
+  text-align: center;
+  
+}
+ 
+  .card-body, 
+.card-body p, 
+.card-body h5 {
+  color: black !important;
+  
+}
+.card-body * {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+  </style>
+
+</head>
+
+<body>
+  <!-- navbar -->
+
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./image/logo.avif" height="50px" width="70px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./About.html">ABOUT US</a>
+                 </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="./Link.html">LINK</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#contactus">CONTACT US</a>
+              <i class="fa-solid fa-house-heart"></i>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                MENU
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item active" href="Oraganicrise.html">Oraganic Rice</a></li>
+                <li><a class="dropdown-item " href="Oraganicfood.html">Oraganic Food</a></li>
+                <li><a class="dropdown-item " href="Organicfruit.html">Oraganic Fruits</a></li>
+                <li><a class="dropdown-item " href="Organicfish.html">Oraganic Fish</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+              </ul>
+            </li>
+              <li class="nav-item">
+                 <a class="nav-link active" href="./Login.html">LOGIN</a>
+                 </li> 
+          </ul>
+          <form class="d-flex position-relative" id="searchForm" onsubmit="return false;">
+          <input
+            id="searchInput"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            autocomplete="off"
+            required
+          />
+
+           <a href="Searchproduct.html" class="btn btn-outline-primary btn-sm"> SEARCH</a>
+
+            <div
+            id="search-results"
+            class="list-group position-absolute w-100"
+            style="
+              top: 100%;
+              left: 0;
+              z-index: 1050;
+              display: none;
+              max-height: 250px;
+              overflow-y: auto;
+              background: white;
+              border: 1px solid #ddd;
+              border-radius: 0 0 5px 5px;
+            "
+          ></div>
+
+            <div style="position: relative; display: inline-block;">
+              <a href="./Cart.html">
+           <img width="38" height="38" src="https://img.icons8.com/fluency/48/fast-cart.png" alt="fast-cart"/> 
+           <span id="cart-count" style="
+           position: absolute;
+           top: -5px;
+           right: -5px;
+          background: red;
+          color: white;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 12px;
+         ">0</span>
+         </a>
+         </div>
+
+         <a href="./Profile.html">
+         <img width="38" height="38" src="https://img.icons8.com/color/48/user.png" alt="user"/>
+         </a>
+          </form>
+        </div>
+
+        <div id="cart-details" style="
+      position: absolute;
+      top: 45px;
+      right: 0;
+      width: 250px;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 100;
+      padding: 10px;
+      font-size: 14px;
+    ">
+      <strong>Cart Items</strong>
+      <ul id="cart-items" style="list-style: none; padding-left: 0; margin-top: 8px;">
+        <!-- Items will be added here -->
+      </ul>
+      <div><strong>Total:</strong> $<span id="cart-total">0.00</span></div>
+    </div>
+  </div>
+      </div>
+    </nav>
+  </section>
+
+  <!--BANNER SECTION-->
+  <section id="bannerselecter">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="./image/b1.jpg!w700wp" class="d-block w-100" alt="..." height="400px" width="400px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="./image/banner2.avif" class="d-block w-100" alt="..." height="400px" width="400px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./image/banner.jpg" class="d-block w-100" alt="..." height="400px" width="400px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!--CARD SECTION-->
+
+  <section class="cardSection" id="productSection">
+    <div class="container">
+      <div class="row">
+        <div class="col py-5">
+          <h2 class="text-center">ORAGANIC FOOD MENU</h2>
+          <p class="text-center" style="color:rgb(20, 50, 20)"><b>This is all about Oraganic Food Menu.You can choose
+              any product</b></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c1.webp" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Organic Friuts</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text" >Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn"  onclick="buyNow('Organic Fruits','₹190/-')">Buy Now</a>
+               <button class="same-size-btn add-to-cart"
+                  data-name="Organic Friuts"
+                  data-price="199"
+                  data-image="./image/c1.webp">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c2.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Organic Wheat</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn" onclick="buyNow('Organic Wheat','₹190/-')">Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Organic Wheat"
+                  data-price="190"
+                  data-image="./image/c2.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c3.webp" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Organic Vegetable</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn" onclick="buyNow('Organic Vegetable','₹190/-')">Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Organic Vegetable"
+                  data-price="190"
+                  data-image="./image/c3.webp">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c4.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Organic Rice</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn" onclick="buyNow('Organic Rice','₹190/-')">Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Organic Rice"
+                  data-price="190"
+                  data-image="./image/c4.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div><br><br>
+
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c5.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Healthy Egg</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn" onclick="buyNow('Healthy Egg','₹190/-')">Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Egg"
+                  data-price="190"
+                  data-image="./image/c5.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c6.avif" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Healthy Oats</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn"onclick="buyNow('Healthy Oats','₹190/-')" >Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Oats"
+                  data-price="190"
+                  data-image="./image/c6.avif">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c7.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Healthy Cottage cheese</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn"onclick="buyNow('Healthy Cottage cheese','₹190/-')" >Buy Now</a>
+             <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Cottage cheese"
+                  data-price="190"
+                  data-image="./image/c7.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/c8.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Healthy Lentils</h5>
+              <p class="card-text">price:200 <span style="color:rgb(158, 55, 55)">5% off </span>RS.190</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+                <a href="#" class="same-size-btn" onclick="buyNow('Healthy Lentils','₹190/-')">Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="190"
+                  data-image="./image/c8.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section><br><br>
+
+  <!---CONTACT US SECTION--->
+  <section class="Contact Us" id="contactus">
+    <div class="container py-4">
+      <div class="row py-3">
+        <div class="col">
+          <h1 style="text-align: center; color:blueviolet; text-shadow:  2px 5px 10px;">CONTACT US</h1>
+          <p style="text-align: center;color: rgb(23, 176, 125);">Organic Food Industry</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" style="background-color: darkgrey;">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="exampleInputFirstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp">
+
+              </div>
+              <div class="col-md-6">
+                <label for="exampleInputLastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="exampleInputLastName" aria-describedby="emailHelp">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+            <br>
+            <button class="btn btn-primary">Submit</button>
+
+          </form>
+        </div>
+
+        <div class="col-md-6">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.236419178036!2d73.83451727372038!3d18.5182154692491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf866c6444cb%3A0x7c87518c11be678c!2sspark%20it%20training%20institute%20for%20full%20stack%20development%20classes%20%26%20training%20institute!5e0!3m2!1sen!2sin!4v1756191141108!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+  
+  <!--MAEQUEE-->
+  <section id="mm">
+   <div id="shopify-section-template--17538481651911__alsoshopon_7RgLqn" class="shopify-section">
+   <div class="marquee-section">
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+          <div class="marquee-set">
+                <div class="marquee-logo">
+                    <a href="https://www.amazon.in/stores/SlurrpFarm/Homepage/page/EDEE2956-1763-4126-A855-F54D7F4D9BF6" target="_blank" rel="noopener">
+                  <img src="./image/ama.jpg" alt="Brand Logo" loading="eager" width="auto" height="65">
+                    </a>
+                </div>
+                <div class="marquee-logo">
+                    <a href="https://www.bigbasket.com/ps/?q=slurrp%20farm" target="_blank" rel="noopener">
+                  <img src="./image/swiggy.jpg" alt="Brand Logo" loading="eager" width="auto" height="65">
+                    </a>
+                  </div>
+                <div class="marquee-logo">
+                    <a href="https://www.firstcry.com/slurrp-farm/2/0/1004480" target="_blank" rel="noopener">
+                  <img src="./image/zomato.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                    </a>
+                  
+                </div>
+
+                <div class="marquee-logo">
+                    <a href="https://www.swiggy.com/instamart/search?query=slurrp+farm" target="_blank" rel="noopener">
+                  <img src="./image/domi.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                    </a>
+                </div>
+                <div class="marquee-logo">
+                    <a href="https://www.apollopharmacy.in/manufacturer/wholsum-foods-pvt-ltd-12515?pageNo=1" target="_blank" rel="noopener">
+                  <img src="./image/deli.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.apollopharmacy.in/manufacturer/wholsum-foods-pvt-ltd-12515?pageNo=1" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/domi.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://blinkit.com/brand/slurrp-farm/202" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/fassos.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                  
+                  <img src="./image/food.jpg" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                </div>
+              
+            
+          </div>
+        
+          <div class="marquee-set">
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.amazon.in/stores/SlurrpFarm/Homepage/page/EDEE2956-1763-4126-A855-F54D7F4D9BF6" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/uber.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.bigbasket.com/ps/?q=slurrp%20farm" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/just.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.firstcry.com/slurrp-farm/2/0/1004480" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/pizza.jpg" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.swiggy.com/instamart/search?query=slurrp+farm" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/du.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.apollopharmacy.in/manufacturer/wholsum-foods-pvt-ltd-12515?pageNo=1" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/box.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.apollopharmacy.in/manufacturer/wholsum-foods-pvt-ltd-12515?pageNo=1" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/dooe.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://blinkit.com/brand/slurrp-farm/202" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/post.png" alt="Brand Logo" loading="eager" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                  </div>
+          </div>
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.bigbasket.com/ps/?q=slurrp%20farm" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/scoffable.png" alt="Brand Logo" loading="lazy" width="auto" height="65">
+                  
+                  
+                    </a>
+                  
+                </div>
+              
+            
+              
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.firstcry.com/slurrp-farm/2/0/1004480" target="_blank" rel="noopener">
+                  
+                  
+                  <img src="./image/tt.png" alt="Brand Logo" loading="lazy" width="auto" height="65">
+
+                    </a>
+                  </div>
+                <div class="marquee-logo">
+                  
+                    <a href="https://www.swiggy.com/instamart/search?query=slurrp+farm" target="_blank" rel="noopener">
+                  <img src="./image/cn.png" alt="Brand Logo" loading="lazy" width="auto" height="65">
+                    </a>
+                </div>
+              
+                <div class="marquee-logo">
+                    <a href="https://www.apollopharmacy.in/manufacturer/wholsum-foods-pvt-ltd-12515?pageNo=1" target="_blank" rel="noopener">
+                  <img src="./image/pd.jpg" alt="Brand Logo" loading="lazy" width="auto" height="65">
+                    </a>
+                </div>
+                <div class="marquee-logo">
+                    <a href="https://www.apollopharmacy.in/manufacturer/wholsum-foods-pvt-ltd-12515?pageNo=1" target="_blank" rel="noopener">
+                  <img src="./image/fs.png" alt="Brand Logo" loading="lazy" width="auto" height="65">
+                    </a>
+                </div>
+                <div class="marquee-logo">
+                    <a href="https://blinkit.com/brand/slurrp-farm/202" target="_blank" rel="noopener">
+                  <img src="./image/fm.png" alt="Brand Logo" loading="lazy" width="auto" height="65">
+                    </a>
+                </div>
+                <div class="marquee-logo">
+                  <img src="./image/tasty.png" alt="Brand Logo" loading="lazy" width="auto" height="65">
+                </div>
+          </div>
+      </div>
+    </div>
+   </div>
+   <div style="clear:both"></div>
+  </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="LoginModel">LOGIN FORM</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- PAYMENT SECTION -->
+  <section id="paymentSection" class="hidden">
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <p><b>Product:</b> <span id="pName"></span></p>
+      <p><b>Price:</b> <span id="pPrice"></span></p>
+    </div>
+    <h2>Select Payment Option</h2>
+    <div class="payment-options">
+      <button onclick="toggleCODForm()">Cash on Delivery</button>
+      <button onclick="showOnline()">Cash on Online</button>
+    </div>
+    <!-- COD Form -->
+    <form id="codForm" onsubmit="submitCOD(event)" class="hidden">
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Address" required>
+      <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}">
+      <input type="text" placeholder="State" required>
+      <input type="text" placeholder="City" required>
+      <input type="number" placeholder="Pin Code" required>
+      <button type="submit">Place Order</button>
+    </form>
+    <!-- Online Payment -->
+    <div id="onlinePayment" class="hidden">
+      <h3>Choose Online Payment Method</h3>
+      <div class="online-options">
+        <button onclick="openCheckout('PhonePe')">PhonePe</button>
+        <button onclick="openCheckout('Google Pay')">Google Pay</button>
+        <button onclick="openCheckout('Paytm')">Paytm</button>
+        <button onclick="openCheckout('PayPal')">PayPal</button>
+      </div>
+    </div>
+    <!-- Checkout + PIN + Success -->
+    <div id="checkoutScreen" class="checkout-screen">
+      <h3 id="checkoutTitle">Checkout</h3>
+      <p>Amount: <b><span id="checkoutAmount">₹0</span></b></p>
+      <button onclick="goToPinScreen()">Pay</button>
+    </div>
+    <div id="pinScreen" class="pin-screen">
+      <h3 id="pinTitle">Enter PIN</h3>
+      <input type="password" id="upiPin" placeholder="****" maxlength="6" required>
+      <button onclick="completePayment()">Submit</button>
+    </div>
+    <div id="successScreen" class="success-screen">
+      <p class="success">✅ Payment Successful!</p>
+      <p>Your order has been placed.</p>
+      <button onclick="backToProducts()">Back to Products</button>
+    </div>
+  </section>
+  
+  <!--footer section-->
+  <section class="footer py-3" id="f">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-3 footerFirstCol">
+          <img src="./image/f1.jpg" height="100">
+          <p> Subscribe Newsletter</p>
+          <div class="subscribe-block">
+                  <input type="email" name="contact[email]" class="email mail" id="E-mail" value="" placeholder="Put Email here" autocapitalize="off" required="">
+                  <div class="email-submit">
+                  </div>
+                </div>
+                <div class="email-submit">
+                    <button type="submit" class="btn btn-style-medium" name="commit" id="Subscribe">
+                      Subscribe
+                    </button>
+                  </div>
+          <div class="py-3">
+            <img width="48" height="48" src="https://img.icons8.com/color-glass/48/visa.png" alt="visa"/>
+            <img width="48" height="48" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-paypal-an-online-payments-system-operating-worldwide-logo-color-tal-revivo.png" alt="external-paypal-an-online-payments-system-operating-worldwide-logo-color-tal-revivo"/>
+            <img width="48" height="48" src="https://img.icons8.com/stickers/100/discover.png" alt="discover"/>
+          </div>
+        </div>
+
+        <div class="col-md-3 footerSecondCol">
+          <ul>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Oraganic.html">Oraganic and Qualification Certificate</a></li>
+            <li><a href="Terms.html">Terms Of Services</a></li>
+            <li><a href="Meet.html">Meet the Farmers</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="col-md-3 footerSecondCol">
+          <ul>
+            <li><a href="./index.html #contactus">Contact Us</a></li>
+            <li><a href="Terms&condition.html">Termas & Condition</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Press/News</a></li>
+            <li><a href="Trcackorder.html">Track your order</a></li>
+          </ul>
+        </div>
+          <div class="col-md-3 footerLastCol">
+           <ul>
+            <li>
+              <h6 class="text-light">Get in Touch</h6>
+              <a href="mailto:care@tataconsumer.com" class="text-light">care@tataconsumer.com<br></a>
+              <br>
+            <li>
+              <h6>Toll Free:</h6>
+              <p>1800-108-4488<br/>
+              Timing:10am to 7pm(monday to saturday)</p>
+            </li>
+            <li>
+              <h6>For International Business</h6>
+              <p>export@organicindia.com</p>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank" >
+              <img width="40" height="40" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>.
+              </a>
+
+              <a href="https://www.instagram.com/" target="_blank">
+              <img width="40" height="40" src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="instagram-new--v1"/>
+              </a>
+
+              <a href="https://www.tiwittwr.com/" target="_blank">
+              <img width="40" height="40" src="https://img.icons8.com/color/48/twitter--v1.png" alt="twitter--v1"/>
+              </a>
+
+               <a href="https://www.linkedin.com" target="_blank">
+              <img width="40" height="40" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/>
+              </a>
+
+              <a href="https://web.telegram.org/a/" target="_blank">
+              <img width="40" height="40" src="https://img.icons8.com/color/48/telegram-app--v1.png" alt="telegram-app--v1"/>
+              </a>
+            </li>
+           </ul>
+          </div>
+          
+      </div>
+    </div>
+     
+</div>
+  </section>
+
+  <script>
+
+
+//pyment 
+ let currentMethod = "";
+    let selectedProduct = {};
+
+    function buyNow(name, price) {
+      selectedProduct = { name, price };
+      document.getElementById("pName").innerText = name;
+      document.getElementById("pPrice").innerText = price;
+      document.getElementById("checkoutAmount").innerText = price;
+
+      document.getElementById("productSection").classList.add("hidden");
+      document.getElementById("paymentSection").classList.remove("hidden");
+      document.querySelector("nav.navbar").classList.add("hidden");
+      document.getElementById("bannerselecter").classList.add("hidden");
+      document.getElementById("mm").classList.add("hidden");
+      document.getElementById("contactus").classList.add("hidden");
+      document.getElementById("f").classList.add("hidden");
+
+
+
+    }
+
+    function toggleCODForm() {
+      document.getElementById("codForm").classList.toggle("hidden");
+    }
+
+    function showOnline() {
+      document.getElementById("onlinePayment").classList.remove("hidden");
+    }
+
+    function submitCOD(event) {
+      event.preventDefault();
+      alert("Order placed successfully with Cash on Delivery!");
+      backToProducts();
+    }
+
+    function openCheckout(method) {
+      currentMethod = method;
+      document.getElementById("checkoutTitle").innerText = method + " Checkout";
+      document.getElementById("checkoutAmount").innerText = selectedProduct.price;
+      document.getElementById("checkoutScreen").style.display = "block";
+      document.getElementById("pinScreen").style.display = "none";
+      document.getElementById("successScreen").style.display = "none";
+    }
+
+    function goToPinScreen() {
+      document.getElementById("checkoutScreen").style.display = "none";
+      document.getElementById("pinTitle").innerText = "Enter " + currentMethod + " PIN";
+      document.getElementById("pinScreen").style.display = "block";
+    }
+
+    function completePayment() {
+      let pin = document.getElementById("upiPin").value;
+      if (pin.length < 4) {
+        alert("Please enter valid PIN");
+        return;
+      }
+      document.getElementById("pinScreen").style.display = "none";
+      document.getElementById("successScreen").style.display = "block";
+      document.getElementById("upiPin").value = "";
+    }
+
+    function backToProducts() {
+      document.getElementById("paymentSection").classList.add("hidden");
+      document.getElementById("productSection").classList.remove("hidden");
+      document.getElementById("codForm").classList.add("hidden");
+      document.getElementById("onlinePayment").classList.add("hidden");
+      document.getElementById("checkoutScreen").style.display = "none";
+      document.getElementById("pinScreen").style.display = "none";
+      document.getElementById("successScreen").style.display = "none";
+      document.querySelector("nav.navbar").classList.remove("hidden")
+      document.getElementById("f").classList.remove("hidden")
+    }
+
+
+   
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cart.length;
+
+    // Add to cart
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = {
+          name: button.getAttribute('data-name'),
+          price: button.getAttribute('data-price'),
+          img: button.getAttribute('data-image')
+        };
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        cartCountElement.textContent = cart.length;
+       // alert(item.name + " added to cart!");
+      });
+      
+     //serch
+      const products = [
+    { name: "ORAGANIC FOOD MENU 1", price: 50, img: "./image/c1.webp" },
+    { name: "ORAGANIC FOOD MENU 2", price: 60, img: "./image/c2.jpg" },
+    { name: "ORAGANIC FOOD MENU 3", price: 70, img: "./image/c3.jpg" },
+    { name: "ORAGANIC FOOD MENU 4", price: 40, img: "./image/c4.jpg" },
+    { name: "ORAGANIC FOOD MENU 5", price: 55, img: "./image/c5.jpg" },
+  ];
+
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (query.length === 0) {
+      searchResults.style.display = 'none';
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    // Filter products by matching name
+    const filtered = products.filter(product =>
+      product.name.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      searchResults.innerHTML = '<div class="list-group-item">No results found</div>';
+      searchResults.style.display = 'block';
+      return;
+    }
+
+    // Show filtered results with image and name
+    searchResults.innerHTML = filtered.map(product => `
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="${product.img}" alt="${product.name}" style="width:40px; height:40px; object-fit:cover; margin-right:10px;">
+        <div>${product.name} - $${product.price}</div>
+      </a>
+    `).join('');
+
+    searchResults.style.display = 'block';
+  });
+
+  // Hide results if user clicks outside
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+      searchResults.style.display = 'none';
+    }
+  });
+
+    });
+
+
+</script>
+
+  
+
+</body>
+
+</html>

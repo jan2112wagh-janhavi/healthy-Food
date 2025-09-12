@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/Sample.css">
+</head>
+<body>
+<section class="checkout py-5 bg-light">
+  <div class="container">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Place Your Order</h4>
+      </div>
+      <div class="card-body">
+        <form id="order-form" action="" method="post">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control" name="name" required placeholder="Enter your name">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Your Number</label>
+              <input type="number" class="form-control" name="number" required placeholder="Enter your number">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Your Email</label>
+              <input type="email" class="form-control" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Payment Method</label>
+              <select name="method" id="payment-method" class="form-select" required>
+                <option value="cash on delivery">Cash on Delivery</option>
+                <option value="razorpay">Razorpay</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Flat / Apartment No.</label>
+              <input type="number" class="form-control" name="flat" required placeholder="Flat No.">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Street</label>
+              <input type="text" class="form-control" name="street" required placeholder="Street Name">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" name="city" required placeholder="City">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">State</label>
+              <input type="text" class="form-control" name="state" required placeholder="State">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Country</label>
+              <input type="text" class="form-control" name="country" required placeholder="Country">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Pin Code</label>
+              <input type="number" class="form-control" name="pin_code" required placeholder="Pin Code">
+            </div>
+
+            <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+            <input type="hidden" name="order_btn" value="1" id="razorpay-order-btn">
+
+            <div class="col-12 d-flex justify-content-between mt-4">
+              <input type="submit" value="Order Now (COD)" class="btn btn-success w-50 me-2" name="order_btn" id="cod-btn">
+              <button type="button" class="btn btn-primary w-50" id="razorpay-btn">Pay with Razorpay</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const razorpayBtn = document.getElementById("razorpay-btn");
+    const form = document.getElementById("order-form");
+    const razorpayPaymentIdInput = document.getElementById("razorpay_payment_id");
+
+    razorpayBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // **amount manually सेट करा** किंवा dynamic set करा
+      // येथे amount ₹500 (50000 paise) म्हणून सेट केला आहे, तुम्हाला बदलायचा असल्यास करा
+      let amount = 50000;  // 500 Rs in paise
+
+      if (amount <= 0) {
+        alert("Cart is empty or invalid amount!");
+        return;
+      }
+
+      var options = {
+        key: "rzp_test_GxPcQRJO31H06E",  // Replace with your Razorpay key
+        amount: amount,
+        currency: "INR",
+        name: "Online Flower Shop",
+        description: "Test Transaction",
+        handler: function (response) {
+          // पेमेंट यशस्वी झाल्यावर payment id hidden input मध्ये set करा आणि form submit करा
+          razorpayPaymentIdInput.value = response.razorpay_payment_id;
+          form.submit();
+        },
+        prefill: {
+          name: form.elements["name"].value,
+          email: form.elements["email"].value,
+          contact: form.elements["number"].value
+        },
+        theme: {
+          color: "#0d6efd"
+        }
+      };
+
+      var rzp = new Razorpay(options);
+      rzp.open();
+    });
+  });
+</script>
+ 
+
+</body>   
+  </html>

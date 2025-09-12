@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+     body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url(./image/profile.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .profile-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .profile-container h2 {
+      text-align: center;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .error {
+  color:red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+  </style>
+</head>
+<body>
+    <div class="profile-container">
+    <h2>User Profile</h2>
+    <form id="profile-form">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" placeholder="Enter your name">
+        <div class="error" id="fullname-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <div class="error" id="email-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Choose a username">
+        <div class="error" id="username-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number">
+        <div class="error" id="phone-error"></div>
+      </div>
+       
+      <div class="form-group">
+  <label for="creationDate">Account Creation Date:</label>
+  <input type="date" id="creationDate">
+  <div class="error" id="creationDate-error"></div>
+</div>
+
+<div class="form-group">
+  <label for="membership">Membership Status:</label>
+  <select id="membership">
+    <option value="">Select membership</option>
+    <option value="Free">Free</option>
+    <option value="Premium">Premium</option>
+  </select>
+  <div class="error" id="membership-error"></div>
+</div>
+
+<div class="form-group">
+  <label for="lastLogin">Last Login Time:</label>
+  <input type="datetime-local" id="lastLogin">
+  <div class="error" id="lastLogin-error"></div>
+</div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+     
+  <script>
+   document.getElementById("profile-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Get values
+    const fullname = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const creationDate = document.getElementById("creationDate").value.trim();
+    const membership = document.getElementById("membership").value.trim();
+
+    // Get error elements
+    const fullnameError = document.getElementById("fullname-error");
+    const emailError = document.getElementById("email-error");
+    const usernameError = document.getElementById("username-error");
+    const phoneError = document.getElementById("phone-error");
+    const creationDateError = document.getElementById("creationDate-error");
+    const membershipError = document.getElementById("membership-error");
+
+    // Reset errors
+    fullnameError.textContent = "";
+    emailError.textContent = "";
+    usernameError.textContent = "";
+    phoneError.textContent = "";
+    creationDateError.textContent = "";
+    membershipError.textContent = "";
+
+    let isValid = true;
+
+    // Full name validation
+    if (fullname === "") {
+      fullnameError.textContent = "Full name is required.";
+      isValid = false;
+    }
+
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+      emailError.textContent = "Email is required.";
+      isValid = false;
+    } else if (!emailPattern.test(email)) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    // Username validation
+    if (username === "") {
+      usernameError.textContent = "Username is required.";
+      isValid = false;
+    }
+
+    // Phone validation (10 digit Indian number)
+    const phonePattern = /^[0-9]{10}$/;
+    if (phone === "") {
+      phoneError.textContent = "Phone number is required.";
+      isValid = false;
+    } else if (!phonePattern.test(phone)) {
+      phoneError.textContent = "Please enter a valid 10-digit phone number.";
+      isValid = false;
+    }
+
+    // Account creation date validation
+    if (creationDate === "") {
+      creationDateError.textContent = "Account creation date is required.";
+      isValid = false;
+    }
+
+    // Membership status validation
+    if (membership === "") {
+      membershipError.textContent = "Please select membership status.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      alert("Profile saved successfully!");
+      // इथे पुढे data store किंवा navigation करता येईल
+    }
+    
+  });
+  </script>
+ 
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oraganic Food</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/Oraganicfood.css">
+
+    <style>
+     .hidden {
+      display: none;
+    }
+
+    #paymentSection {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .order-summary {
+      background: #fff;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    .payment-options button {
+      width: 200px;
+      background: #28a745;
+      margin: 8px;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .online-options button {
+      display: block;
+      width: 250px;
+      margin: 10px auto;
+      background: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .checkout-screen,
+    .pin-screen,
+    .success-screen {
+      display: none;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 350px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .success {
+      color: green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+.payment-options {
+  text-align: center;
+  
+}
+  </style>
+
+</head>
+<body>
+    
+    <!-- navbar -->
+
+  
+    <section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./image/logo.avif" height="50px" width="70px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./About.html">ABOUT US</a>
+                 </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="./Link.html">LINK</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#contactus">Contact Us</a>
+              <i class="fa-solid fa-house-heart"></i>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                MENU
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item active" href="Oraganicrise.html">Oraganic Rice</a></li>
+                <li><a class="dropdown-item " href="Oraganicfood.html">Oraganic Food</a></li>
+                <li><a class="dropdown-item " href="Organicfruit.html">Oraganic Fruits</a></li>
+                 <li><a class="dropdown-item " href="Organicfish.html">Oraganic Fish</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+               
+              </ul>
+            </li>
+              <li class="nav-item">
+                 <a class="nav-link active" href="./Login.html">LOGIN</a>
+                 </li> 
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success active" type="submit">Search</button>
+            <div style="position: relative; display: inline-block;">
+              <a href="./Cart.html">
+           <img width="38" height="38" src="https://img.icons8.com/fluency/48/fast-cart.png" alt="fast-cart"/> 
+           <span id="cart-count" style="
+           position: absolute;
+           top: -5px;
+           right: -5px;
+          background: red;
+          color: white;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 12px;
+         ">0</span>
+         </a>
+         </div>
+         <a href="./Profile.html">
+         <img width="38" height="38" src="https://img.icons8.com/color/48/user.png" alt="user"/>
+         </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!---- ORAGANIC FOOD----->
+
+   <div class="row" id="productSection" >
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food1.jpeg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+              <h5 class="card-title">Food 1</h5>
+              <p class="card-text" style="font-style: italic; "><b>price:200 </b></p>
+              <p class="card-text" style="font-weight: bold;">Eat a diverse range of foods from different food groups to get a wide mix of nutrients. </p>
+              
+              <button class="same-size-btn" onclick="buyNow('Food 1','₹200/-')">Buy Now</button>
+
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food1.jpeg">
+            Add to Cart
+          </button>
+          
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food2.png" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 2</h5>
+              <p class="card-text"style="font-style: italic; " ><b>price:200 </b></p>
+              
+              <p class="card-text"style="font-weight: bold;" >Base meals on higher-fiber whole grains, such as whole wheat bread. </p>
+              <a href="#" class="same-size-btn" onclick="buyNow('Food 2','₹200/-')">Buy Now</a>
+              
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food2.png">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food3.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 3</h5>
+              <p class="card-text" style="font-style: italic; "><b>price:300 </b></p>
+              <p class="card-text"style="font-weight: bold;" >Include fish , lean meats, poultry, eggs, beans, nuts, and seeds. </p>
+              <a href="#" class="same-size-btn" onclick="buyNow('Food 3','₹300/-')" >Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food3.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food4.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 4</h5>
+              <p class="card-text"style="font-style: italic; " ><b>price:250 </b></p>
+              <p class="card-text"style="font-weight: bold;" >Use unsaturated oils like olive oil and canola oil in moderation. </p>
+              <a href="#" class="same-size-btn"onclick="buyNow('Food 4','₹250/-')" >Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food4.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div><br><br>
+
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food5.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 5</h5>
+              <p class="card-text"style="font-style: italic; " ><b>price:200 </b></p>
+              <p class="card-text"style="font-weight: bold;" >Make water your primary beverage, aiming for 6-8 glasses a day. </p>
+              <a href="#" class="same-size-btn" onclick="buyNow('Food 5','₹200/-')">Buy Now</a>
+              <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food5.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food6.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 6</h5>
+              <p class="card-text" style="font-style: italic; "><b></b>price:300 </b></p>
+              <p class="card-text" style="font-weight: bold;"> Reduce intake of sugary drinks, sweets, and other foods high in free sugars. </p>
+              <a href="#" class="same-size-btn" onclick="buyNow('Food 6','₹300/-')" >Buy Now</a>
+               <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food6.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food7.webp" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 7</h5>
+              <p class="card-text" style="font-style: italic; " ><b>price:600</b> </p>
+              <p class="card-text"style="font-weight: bold;" > Limit foods high in saturated fats and avoid trans fats &provide nutritional. </p>
+              <a href="#" class="same-size-btn" onclick="buyNow('Food 7','₹600/-')">Buy Now</a>
+               <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food7.webp">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3"><br><br>
+          <div class="card" style="width: 16rem;">
+            <img src="./image/food8.jpg" class="card-img-top" alt="..." height="160">
+            <div class="card-body">
+               <h5 class="card-title">Food 8</h5>
+              <p class="card-text" style="font-style: italic; "><b>price:500 </b></p>
+              <p class="card-text" style="font-weight: bold;" >Choose minimally processed foods over highly and ultra-processed option</p>
+              <a href="#" class="same-size-btn" onclick="buyNow('Food 8','₹500/-')">Buy Now</a>
+               <button class="same-size-btn add-to-cart"
+                  data-name="Healthy Lentils"
+                  data-price="200"
+                  data-image="./image/food8.jpg">
+            Add to Cart
+          </button>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+
+
+        <!-- PAYMENT SECTION -->
+  <section id="paymentSection" class="hidden">
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <p><b>Product:</b> <span id="pName"></span></p>
+      <p><b>Price:</b> <span id="pPrice"></span></p>
+    </div>
+    <h2>Select Payment Option</h2>
+    <div class="payment-options">
+      <button onclick="toggleCODForm()">Cash on Delivery</button>
+      <button onclick="showOnline()">Cash on Online</button>
+    </div>
+    <!-- COD Form -->
+    <form id="codForm" onsubmit="submitCOD(event)" class="hidden">
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Address" required>
+      <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}">
+      <input type="text" placeholder="State" required>
+      <input type="text" placeholder="City" required>
+      <input type="number" placeholder="Pin Code" required>
+      <button type="submit">Place Order</button>
+    </form>
+    <!-- Online Payment -->
+    <div id="onlinePayment" class="hidden">
+      <h3>Choose Online Payment Method</h3>
+      <div class="online-options">
+        <button onclick="openCheckout('PhonePe')">PhonePe</button>
+        <button onclick="openCheckout('Google Pay')">Google Pay</button>
+        <button onclick="openCheckout('Paytm')">Paytm</button>
+        <button onclick="openCheckout('PayPal')">PayPal</button>
+      </div>
+    </div>
+    <!-- Checkout + PIN + Success -->
+    <div id="checkoutScreen" class="checkout-screen">
+      <h3 id="checkoutTitle">Checkout</h3>
+      <p>Amount: <b><span id="checkoutAmount">₹0</span></b></p>
+      <button onclick="goToPinScreen()">Pay</button>
+    </div>
+    <div id="pinScreen" class="pin-screen">
+      <h3 id="pinTitle">Enter PIN</h3>
+      <input type="password" id="upiPin" placeholder="****" maxlength="6" required>
+      <button onclick="completePayment()">Submit</button>
+    </div>
+    <div id="successScreen" class="success-screen">
+      <p class="success">✅ Payment Successful!</p>
+      <p>Your order has been placed.</p>
+      <button onclick="backToProducts()">Back to Products</button>
+    </div>
+  </section>
+
+      
+        <!--footer section-->
+  <section class="footer py-3" id="f">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-3 footerFirstCol">
+          <img src="./image/f1.jpg" height="100">
+          <p> Subscribe Newsletter</p>
+          <div class="subscribe-block">
+                  <input type="email" name="contact[email]" class="email mail" id="E-mail" value="" placeholder="Put Email here" autocapitalize="off" required="">
+                  <div class="email-submit">
+                  </div>
+                </div>
+                <div class="email-submit">
+                    <button type="submit" class="btn btn-style-medium" name="commit" id="Subscribe">
+                      Subscribe
+                    </button>
+                  </div>
+          <div class="py-3">
+            <img width="48" height="48" src="https://img.icons8.com/color-glass/48/visa.png" alt="visa"/>
+            <img width="48" height="48" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-paypal-an-online-payments-system-operating-worldwide-logo-color-tal-revivo.png" alt="external-paypal-an-online-payments-system-operating-worldwide-logo-color-tal-revivo"/>
+            <img width="48" height="48" src="https://img.icons8.com/stickers/100/discover.png" alt="discover"/>
+          </div>
+        </div>
+
+        <div class="col-md-3 footerSecondCol">
+          <ul>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Oraganic.html">Oraganic and Qualification Certificate</a></li>
+            <li><a href="Terms.html">Terms Of Services</a></li>
+            <li><a href="Meet.html">Meet the Farmers</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="col-md-3 footerSecondCol">
+          <ul>
+            <li><a href="./index.html #contactus">Contact Us</a></li>
+            <li><a href="Terms&condition.html">Termas & Condition</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Press/News</a></li>
+            <li><a href="Trackorder.html">Track your order</a></li>
+          </ul>
+        </div>
+          <div class="col-md-3 footerLastCol">
+           <ul>
+            <li>
+              <h6 class="text-light">Get in Touch</h6>
+              <a href="mailto:care@tataconsumer.com" class="text-light">care@tataconsumer.com<br></a>
+              <br>
+            <li>
+              <h6>Toll Free:</h6>
+              <p>1800-108-4488<br/>
+              Timing:10am to 7pm(monday to saturday)</p>
+            </li>
+            <li>
+              <h6>For International Business</h6>
+              <p>export@organicindia.com</p>
+            </li>
+            <li>
+               <a href="https://www.facebook.com/" target="_blank" >
+              <img width="40" height="40" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
+              </a>
+
+               <a href="https://www.instagram.com/" target="_blank" >
+              <img width="40" height="40" src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="instagram-new--v1"/>
+              </a>
+
+               <a href="https://www.tiwittwr.com/" target="_blank" >
+              <img width="40" height="40" src="https://img.icons8.com/color/48/twitter--v1.png" alt="twitter--v1"/>
+              </a>
+
+               <a href="https://www.linkedin.com" target="_blank" >
+              <img width="40" height="40" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/>
+              </a>
+
+               <a href="https://web.telegram.org/a/" target="_blank" >
+              <img width="40" height="40" src="https://img.icons8.com/color/48/telegram-app--v1.png" alt="telegram-app--v1"/>
+              </a>
+            </li>
+           </ul>
+          </div>
+          
+      </div>
+    </div>
+     
+</div>
+  </section>
+   
+  <script>
+//pyment 
+ let currentMethod = "";
+    let selectedProduct = {};
+
+    function buyNow(name, price) {
+      selectedProduct = { name, price };
+      document.getElementById("pName").innerText = name;
+      document.getElementById("pPrice").innerText = price;
+      document.getElementById("checkoutAmount").innerText = price;
+
+      document.getElementById("productSection").classList.add("hidden");
+      document.getElementById("paymentSection").classList.remove("hidden");
+      document.querySelector("nav.navbar").classList.add("hidden");
+      //document.getElementById("bannerselecter").classList.add("hidden");
+     // document.getElementById("mm").classList.add("hidden");
+      //document.getElementById("contactus").classList.add("hidden");
+      document.getElementById("f").classList.add("hidden");
+
+
+
+    }
+
+    function toggleCODForm() {
+      document.getElementById("codForm").classList.toggle("hidden");
+    }
+
+    function showOnline() {
+      document.getElementById("onlinePayment").classList.remove("hidden");
+    }
+
+    function submitCOD(event) {
+      event.preventDefault();
+      alert("Order placed successfully with Cash on Delivery!");
+      backToProducts();
+    }
+
+    function openCheckout(method) {
+      currentMethod = method;
+      document.getElementById("checkoutTitle").innerText = method + " Checkout";
+      document.getElementById("checkoutAmount").innerText = selectedProduct.price;
+      document.getElementById("checkoutScreen").style.display = "block";
+      document.getElementById("pinScreen").style.display = "none";
+      document.getElementById("successScreen").style.display = "none";
+    }
+
+    function goToPinScreen() {
+      document.getElementById("checkoutScreen").style.display = "none";
+      document.getElementById("pinTitle").innerText = "Enter " + currentMethod + " PIN";
+      document.getElementById("pinScreen").style.display = "block";
+    }
+
+    function completePayment() {
+      let pin = document.getElementById("upiPin").value;
+      if (pin.length < 4) {
+        alert("Please enter valid PIN");
+        return;
+      }
+      document.getElementById("pinScreen").style.display = "none";
+      document.getElementById("successScreen").style.display = "block";
+      document.getElementById("upiPin").value = "";
+    }
+
+    function backToProducts() {
+      document.getElementById("paymentSection").classList.add("hidden");
+      document.getElementById("productSection").classList.remove("hidden");
+      document.getElementById("codForm").classList.add("hidden");
+      document.getElementById("onlinePayment").classList.add("hidden");
+      document.getElementById("checkoutScreen").style.display = "none";
+      document.getElementById("pinScreen").style.display = "none";
+      document.getElementById("successScreen").style.display = "none";
+      document.querySelector("nav.navbar").classList.remove("hidden")
+      document.getElementById("f").classList.remove("hidden")
+    }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCountElement = document.getElementById('cart-count');
+    cartCountElement.textContent = cart.length;
+
+    // Add to cart
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = {
+          name: button.getAttribute('data-name'),
+          price: button.getAttribute('data-price'),
+          img: button.getAttribute('data-image')
+        };
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        cartCountElement.textContent = cart.length;
+       // alert(item.name + " added to cart!");
+      });
+    });
+
+    
+
+
+</script>
+
+</body>
+</html>

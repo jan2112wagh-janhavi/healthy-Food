@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healthy Food Login</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/LO.css">
+</head>
+<body class="container mt-5">
+
+  <h2 class="mb-4">Search Products</h2>
+
+  <form onsubmit="handleSearch(event)">
+    <input type="text" id="searchInput" placeholder="Search products..." class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+  </form>
+
+  <div id="searchResults" class="row mt-4"></div>
+
+  <!-- ✅ Product Data -->
+  <script>
+    const products = [
+      { name: "Organic Food Menu 1", img: "./image/c1.webp", price: 2000 },
+      { name: "Organic Food Menu 2", img: "./image/c2.jpg", price: 5000 },
+      { name: "Bracelet", img: "./images/bracelet1.jpg", price: 1500 },
+      { name: "Necklace", img: "./images/necklace1.jpg", price: 7000 },
+      { name: "Bangles", img: "./images/bangles1.jpg", price: 2500 }
+    ];
+
+    function handleSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+
+      resultsContainer.innerHTML = ""; // clear previous
+
+      if (query === "") {
+        resultsContainer.innerHTML = "<p class='text-danger'>Please enter something to search.</p>";
+        return;
+      }
+
+      const results = products.filter(item =>
+        item.name.toLowerCase().includes(query)
+      );
+
+      if (results.length === 0) {
+        resultsContainer.innerHTML = "<p class='text-danger'>No matching products found.</p>";
+        return;
+      }
+
+      // Show matching products as cards
+      results.forEach(item => {
+        const col = document.createElement("div");
+        col.className = "col-md-3";
+
+        col.innerHTML = `
+          <div class="card h-100">
+            <a href="Product.html?name=${encodeURIComponent(item.name)}&price=${item.price}&img=${encodeURIComponent(item.img)}" style="text-decoration: none; color: inherit;">
+              <img src="${item.img}" class="card-img-top" alt="${item.name}" height="200">
+              <div class="card-body text-center">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">Price: ₹${item.price}</p>
+              </div>
+            </a>
+          </div>
+        `;
+
+        resultsContainer.appendChild(col);
+      });
+    }
+  </script>
+
+   </body>
+</html>

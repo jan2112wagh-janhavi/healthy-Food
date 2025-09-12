@@ -1,0 +1,117 @@
+
+  .home-about {
+    padding-top: 100px;
+    padding-bottom: 0px;
+  }
+  .home-about .home-about-wrap{
+    margin-top: 100px;
+  }
+  .home-about .home-about-wrap:first-child{
+    margin-top: 0px;
+  }
+  @media (max-width : 1199px){
+    .home-about {
+      padding-top: 70px;
+      padding-bottom: 0px;
+    }
+    .home-about .home-about-wrap{
+      margin-top: 70px;
+    }
+  }
+  @media (max-width : 767px){
+    .home-about {
+      padding-top: 50px;
+      padding-bottom: 0px;
+    }
+    .home-about .home-about-wrap{
+      margin-top: 50px;
+    }
+  }
+  .home-about .home-about-wrap.rowreverse{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .home-about-txt{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home-about .home-about-wrap.rowreverse .home-about-txt {padding-right: 30px;}
+  .home-about .home-about-wrap.noreverse .home-about-txt {margin-left: 60px;}
+  .home-about-txt .home-about-wrapper .section-title{
+    text-align: left;
+  }
+  .home-about-txt label.home-about-label{
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .home-about-txt h2.home-about-texttl{
+    font-size: 40px;
+    line-height: 1;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .home-about-txt h2.home-about-texttl span {
+    display: block;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-top: 15px;    
+    color: #275c53;
+  }
+  .home-about-txt h2.home-about-texttl span:first-child {
+    margin-top: 0;
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #275c53;
+    line-height: 1.2;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .home-about-txt p.home-about-texdes{
+    font-size: 16px;
+    position: relative;
+    line-height: 1.8;
+    margin-top: 20px;
+  }
+  .home-about-txt .home-about-btn{
+    margin-top: 30px;
+  }
+  @media (max-width: 1199px){
+    .home-about .home-about-wrap.noreverse .home-about-txt {margin-left: 15px;}
+    .home-about-txt h2.home-about-texttl{
+      font-size: 30px;
+    }
+    .home-about-txt p.home-about-texdes{
+      font-size: 14px;
+      margin-top: 27px;
+    }
+    .home-about-txt .home-about-btn{
+      margin-top: 31px;
+    }
+  }
+  @media (max-width : 991px){
+    .home-about-txt h2.home-about-texttl{
+      font-size: 24px;
+    }
+    .home-about-txt .home-about-btn{
+      margin-top: 22px;
+    }
+    .home-about-txt p.home-about-texdes{
+      margin-top: 18px;
+    }
+  }
+  @media (max-width : 767px){
+    .home-about-txt{
+      padding-top: 30px;
+    }
+    .home-about .home-about-wrap.noreverse .home-about-txt {margin-left: 0px;}
+    .home-about .home-about-wrap.rowreverse{
+      flex-direction: column-reverse;
+    }
+   
+    .home-about .home-about-wrap.rowreverse .home-about-txt {padding-right: 0;}
+    .home-about-txt h2.home-about-texttl{
+      font-size: 24px;
+    }
+  }

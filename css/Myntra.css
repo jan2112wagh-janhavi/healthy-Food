@@ -1,0 +1,136 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+  text-shadow: 10px 10px 7px rgb(80, 27, 36);
+}
+.navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar-brand img {
+      height: 40px;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: black !important;
+    }
+    .input-group{
+      font-size: smaller;
+      margin-top: 15px;
+      position: relative;
+      margin-bottom: 15px;
+    width: 390px;
+    }
+    .input-group i{
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #555;
+    }
+    .input-group input {
+      width: 320px;
+      padding: 10px 10px 10px 40px; 
+      background-color: lightgray;
+    }
+    .icon-nav i {
+      font-size: 20px;
+      color: black;
+    }
+    .icon-text {
+      font-size: 12px;
+      display: block;
+    }
+    .nav-item {
+      text-align: center;
+      margin: 0 10px;
+    }
+
+    /* Hover dropdown */
+    .hover-dropdown:hover > .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+
+     /* Mega Menu */
+    .mega-menu {
+      width: 800px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .mega-menu .col-md-3 {
+      padding: 10px 20px;
+    }
+ .mega-menu h6 {
+      font-size: 14px;
+      color: #ff3f6c; /* Myntra pink */
+      margin-bottom: 8px;
+    }
+    .mega-menu .dropdown-item {
+      font-size: 13px;
+      padding: 3px 0;
+      color: black;
+    }
+    .mega-menu .dropdown-item:hover {
+      color: #ff3f6c;
+      background: none;
+    }
+
+
+sup{
+  color:red;
+}
+.hover-dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+/* Optional: to avoid delay */
+.dropdown-menu {
+  transition: none;
+}
+.container-fluid{
+    background: white;
+    
+}
+
+.footer{
+  color:white;
+ background: -webkit-linear-gradient(rgb(66, 194, 66));
+}
+.footer .footerFirstCol p{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+  font-size: 20;
+  font-style: italic;
+}
+.footer .footerFirstCol input,button{
+  height: 30px;
+}
+.footer .footerFirstCol button:hover{
+  background-color:rgb(249, 159, 174);
+  color: white;
+  border: 2px solid rgb(242, 34, 69);
+}
+.footer .footerSecondCol ul li a{
+   text-decoration: none;
+   color: white;
+}
+.footer .footerSecondCol ul li{
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.footer .footerLastCol ul li p{
+  line-height: 20px;
+}
+.footer .footerLastCol ul li h6{
+  font-family:Josefin Sans,sans-serif;
+}

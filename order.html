@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking Result</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h2>Order Tracking Result</h2>
+  <p id="result"></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+        const orderTracking = params.get("order_tracking");
+        const lang = params.get("lang");
+
+        // Displaying values
+        if(orderTracking){
+            document.getElementById("order-info").innerText = "Tracking Order: " + orderTracking + " | Language: " + (lang || "not set");
+        } else {
+            document.getElementById("order-info").innerText = "No order tracking info provided.";
+        }
+  </script>
+</body>
+</html>

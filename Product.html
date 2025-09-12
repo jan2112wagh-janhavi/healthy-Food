@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      margin-top: 80px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .product-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-price {
+      font-size: 24px;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+
+    #buy-now {
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+    
+    <div class="product-card">
+    <h2 id="product-name" class="product-name"></h2>
+    <img id="product-img" src="" alt="Product Image" class="product-img" />
+    <p class="product-price">Price: $<span id="product-price"></span></p>
+    <button id="buy-now" class="btn btn-success">Buy Now</button>
+  </div>
+
+  <script>
+    // Function to get query parameters
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Get product data from URL
+    const name = getQueryParam("name");
+    const price = getQueryParam("price");
+    const img = getQueryParam("img");
+
+    // Set product details
+    document.getElementById("product-name").textContent = name;
+    document.getElementById("product-img").src = img;
+    document.getElementById("product-price").textContent = price;
+
+    // Buy Now functionality
+    document.getElementById("buy-now").addEventListener("click", () => {
+      const item = { name, price, img };
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+      // Optionally redirect to cart
+      // window.location.href = "cart.html";
+    });
+  </script>
+</body>
+</html>

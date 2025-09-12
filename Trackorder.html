@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trck Order</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/trackorder.css">
+</head>
+<body>
+    <!-- navbar -->
+
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./image/logo.avif" height="50px" width="70px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./About.html">ABOUT US</a>
+                 </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="#">LINK</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#contactus">Contact Us</a>
+              <i class="fa-solid fa-house-heart"></i>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                MENU
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item active" href="Oraganicrise.html">Oraganic Rice</a></li>
+                <li><a class="dropdown-item " href="Oraganicfood.html">Oraganic Food</a></li>
+                <li><a class="dropdown-item " href="Organicfruit.html">Oraganic Fruits</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+              <li class="nav-item">
+                 <a class="nav-link active" href="./Login.html">LOGIN</a>
+                 </li> 
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success active" type="submit">Search</button>
+            <img width="38" height="38" src="https://img.icons8.com/fluency/48/fast-cart.png" alt="fast-cart"/>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
+    
+   <div class="shipway_div">
+    <h3>Track Your Order</h3>
+    <form id="cpa-form" method="get" action="./Trackorder.html">
+      <label for="order_tracking_data"><strong>Order ID / Tracking Number</strong></label>
+      <input type="text" class="shp-form-control shp-mb-5" id="order_tracking_data" name="order_tracking" placeholder="Enter Order ID or Tracking Number" />
+      <input type="hidden" name="lang" value="" />
+      <input type="hidden" id="empty_validation_error" value="Please enter the required field(s)" />
+      <input type="submit" class="shp-btn" id="scan_order" value="Track Order" />
+      <br />
+      <span class="shp-error_notification"></span>
+    </form>
+  </div>
+
+            <script>
+                document.getElementById('scan_order').addEventListener('click', function(event) {
+                event.preventDefault();
+                const orderTracking = document.getElementById('order_tracking_data').value.trim();
+                if (orderTracking === '') {
+                alert('Please enter your order tracking number.');
+                return;
+               }
+               alert('Tracking Order Number: ' + orderTracking);
+                });
+
+         </script>
+
+
+</body>
+</html>
