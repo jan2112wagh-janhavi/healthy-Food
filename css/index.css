@@ -265,5 +265,16 @@ button {
   align-items: center;      
   text-align: center;
 }
+.card {
+    margin: auto;
+    text-align: center;
+}
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
